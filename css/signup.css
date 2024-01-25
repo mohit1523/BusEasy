@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+h1{
+    font-family: 'Rajdhani' , sans-serif;
+    text-align: center;
+    font-size: 4vmax;
+    background-color: purple;
+}
+
+form{
+    border: 1px solid;
+}

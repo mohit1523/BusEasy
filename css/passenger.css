@@ -1,0 +1,303 @@
+/* IMPORT CODE */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.wallpaper-div {
+  background: url(../assets/bus-wallpaper.jpg);
+  background-size: cover;
+  padding-bottom: 10vh;
+}
+
+/* CODE FOR MAIN HEADING */
+
+.head-div {
+  height: 70vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.head-div h1 {
+  font-size: 10vmax;
+  color: #1b1212;
+  backdrop-filter: blur(2px);
+  font-family: "Audiowide", cursive;
+  font-weight: 100;
+}
+
+
+/* CODE FOR SELECTION DIV */
+
+.busSelector {
+  border: 1px solid;
+  width: fit-content;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 50vmax;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+#from-select,
+#to-select {
+  border: none;
+  padding: 1.5vmax;
+  width: fit-content;
+  font-size: 1.5vmax;
+  padding-right: 0;
+  font-family: "Rajdhani", sans-serif;
+  background: none;
+  outline: none;
+}
+
+#findBusBtn {
+  position: relative;
+  border: none;
+  width: 10vmax;
+  height: 6vmax;
+  color: white;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 900;
+  font-size: 1.5vmax;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+  background: purple;
+  border-left: 1px solid black;
+  cursor: pointer;
+}
+
+#findBusBtn::before {
+  position: absolute;
+  content: "";
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  border-radius: 0 50vw 50vw 0;
+  transition: all 0.2s ease-in-out;
+}
+
+#findBusBtn:hover {
+  color: purple;
+}
+
+#findBusBtn:hover::before {
+  width: 98%;
+}
+
+/* CODE FOR DESTINATIONS */
+
+.travel-to-places h3 {
+  font-size: 2vmax;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 100;
+  margin: 10vh 2vw 5vh;
+}
+
+.destinations {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2vw;
+}
+
+.dest {
+  border: 2px solid purple;
+  width: 20vw;
+  box-shadow: 0 0 5px black;
+  aspect-ratio: 3 / 4;
+  border-radius: 5px;
+  padding: 2vh 2vw;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dest img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: brightness(85%);
+  transition: all 0.4s ease-in-out;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.1);
+}
+
+.dest:hover img {
+  filter: brightness(65%);
+  transform: scale(1);
+}
+
+.destinations h6 {
+  text-align: center;
+  font-family: "rajdhani", sans-serif;
+  font-size: 2vmax;
+  font-weight: 900;
+  color: white;
+}
+
+.destinations h6::after {
+  transition: all 0.4s ease;
+  content: attr(title);
+  position: absolute;
+  height: fit-content;
+  width: fit-content;
+  text-align: start;
+  padding: 0vh 15%;
+  bottom: -100%;
+  left: 0;
+  opacity: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.3vmax;
+}
+
+.dest:hover h6::after {
+  bottom: 10%;
+  opacity: 1;
+}
+
+/* CODE FOR FAQ */
+
+.faq h2 {
+  font-size: 2vmax;
+  font-family: "Audiowide", sans-serif;
+  margin: 10vh 2vw 5vh;
+  font-weight: 100;
+}
+
+.faq summary {
+  font-family: "Rajdhani", sans-serif;
+  padding: 2vh 2vw;
+}
+
+.faq details[open] summary {
+  border-bottom: 1px solid;
+  font-weight: 900;
+}
+
+.faq details {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-family: "Raleway", sans-serif;
+  width: 60vw;
+  margin: 2vh 2vw;
+  border: 1px solid purple;
+  border-radius: 5px;
+  overflow:hidden;
+}
+
+.faq details div {
+  padding: 2vh 2vw;
+}
+
+/* CODE FOR FOOTER */
+
+footer {
+  margin-top: 10vh;
+  background-color: #1b1212;
+  font-family: "Raleway", sans-serif;
+  color: white;
+}
+
+.footer-div1,
+.footer-div2,
+.footer-div3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-div1 {
+  margin: 0 5vw;
+  background-color: purple;
+  border-bottom-left-radius: 10px;
+  padding: 10vh 0;
+  border-bottom-right-radius: 10px;
+}
+
+.year,
+.location {
+  margin: 4vh 5vw;
+  border-top: 1px solid black;
+  padding: 2vh 2vw 2vh 10vw;
+  font-size: 3vmax;
+  font-weight: 900;
+  position: relative;
+  border-radius: 10px;
+  border-top-right-radius: 0;
+}
+
+.year::before,
+.location::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 0.9vmax;
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 900;
+  border: 1px solid black;
+  padding: 1vh 1vw;
+  border-radius: 10px;
+  border-top: none;
+}
+
+.year::before {
+  content: "YEAR FOUNDED";
+}
+
+.location::before {
+  content: "LOCATION";
+}
+
+.footer-div2 {
+  padding: 10vh 5vw;
+  font-size: 1.2vmax;
+}
+
+.footer-div2 > div div:first-child {
+  color: purple;
+  font-weight: 900;
+  margin-bottom: 1vh;
+}
+
+.footer-div2 > div {
+  width: 10vw;
+}
+
+.footer-div3 {
+  padding: 0vh 5vw 10vh;
+  color: purple;
+}
+
+#copyright {
+  font-family: "Rajdhani", sans-serif;
+}
+
+.footer-div3 div div:first-child {
+  font-weight: 900;
+}
+
+#topBtn {
+  border: none;
+  font-family: "Raleway", sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: purple;
+  align-self: center;
+  color: white;
+  font-weight: 900;
+  padding: 2vh 1vw;
+  border-radius: 100px;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid purple;
+}
+
+#topBtn:hover {
+  box-shadow: 0 0 10px purple;
+  border: 1px solid purple;
+}

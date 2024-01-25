@@ -1,0 +1,116 @@
+/* IMPORT STATEMENTS */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CODE FOR MY TICKETS SECTION */
+
+#wallpaper{
+  position: fixed;
+  top: -27vh;
+  z-index: -4;
+  width: 100vw;
+  transform: scale(1.1);
+}
+
+.my-tickets {
+  margin: 5vh 2vw;
+}
+
+.my-tickets h3 {
+  font-size: 2vmax;
+  margin-bottom: 5vh;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 100;
+}
+
+.tickets {
+  display: flex;
+  gap: 8vmin 5vmax;
+  flex-wrap: wrap;
+}
+
+.ticket {
+  position: relative;
+  display: flex;
+  background-color: white;
+  color: black;
+  align-self: flex-start;
+  border-radius: 10px;
+  border: 2px solid purple;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.ticket h1{
+  border-radius: 0 5px 5px 0;
+  background-color: purple;
+  font-size: 1.5vmax;
+  transform: rotate(180deg);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-family: 'Audiowide', sans-serif;
+  font-weight: 100;
+  writing-mode: vertical-rl;
+}
+
+.ticket table{
+  border-collapse: collapse;
+  margin: 5vh 0;
+  width: 25vw;
+}
+
+.ticket table td{
+  padding: 0 0 1vw 1vw;
+}
+
+.table-head{
+  font-weight: 900;
+}
+
+.cancelBtn{
+  position: absolute;
+  top: 10px;
+  right: 1vw;
+  background: none;
+  border: none;
+  font-size: 2vmax;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.cancelBtn:hover{
+  color: purple;
+}
+
+#printTicketBtn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  padding: 10px;
+  font-size: 2vmax;
+  background: none;
+  cursor: pointer;
+}
+
+.barcode{
+  font-size: 2vmax;
+  margin: 1vh 1vw;
+  font-family: 'Libre Barcode 39', system-ui;
+}
+
+.bus-number{
+  text-align: center;
+  padding: 2vh 1vw;
+  font-size: 1.5vmax;
+  font-family: 'Raleway', sans-serif;
+  border-left: 1px dashed ;
+  font-weight: 900;
+  writing-mode: vertical-lr;
+}

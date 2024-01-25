@@ -1,0 +1,304 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#wallpaper-2 {
+  position: fixed;
+  top: -50vh;
+  filter: blur(1px);
+  transform: scale(1.1);
+  z-index: -3;
+  width: 100vw;
+}
+
+/* CODE FOR BUS DIV */
+
+.busToShow {
+  padding: 0vh 2vw;
+  gap: 2vh 2vw;
+}
+
+.busToShowHead {
+  font-size: 2vmax;
+  font-family: "Audiowide", sans-serif;
+  font-weight: 100;
+  margin: 10vh 0vw 5vh;
+}
+
+.noBus {
+  font-size: 1.5vmax;
+  font-family: "Raleway", sans-serif;
+}
+
+.bus {
+  display: inline-block;
+  margin: 0 2vw 3vh 0;
+  border: 1px solid;
+  width: 40vw;
+  border-radius: 5px;
+  overflow: hidden;
+  font-size: 1.5vmax;
+  font-family: "Raleway", sans-serif;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.bus-name {
+  background-color: purple;
+  text-align: center;
+  color: white;
+  padding: 1vh 0;
+  font-size: 2vmax;
+  font-family: "Audiowide", sans-serif;
+}
+
+.start-end-pos,
+.seat,
+.timing {
+  padding: 2vh 2vw;
+  font-size: 1.5vmax;
+  font-family: "Rajdhani", sans-serif;
+}
+
+.book-ticket {
+  position: relative;
+  margin: 3vh 2vw;
+  padding: 2vh 2vw;
+  border-radius: 5px;
+  border: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  background: purple;
+  color: white;
+  font-size: 1.2vmax;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid purple;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.book-ticket::before {
+  position: absolute;
+  content: "";
+  width: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 50vw;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.book-ticket:hover::before {
+  top: -50%;
+  left: -50%;
+  width: 200%;
+}
+
+.book-ticket:hover {
+  color: purple;
+}
+
+.number-plate {
+  color: white;
+  background-color: #1b1212;
+  padding: 2vh 2vw;
+  text-align: center;
+  font-family: "Audiowide", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CODE FOR BUS SEAT SELECTION */
+
+.modalForSeatSelection {
+  position: fixed;
+  display: none;
+  justify-content: space-evenly;
+  top: 0;
+  background: linear-gradient(white 60%, purple);
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+}
+
+.modalForSeatSelection > img {
+  width: 50vw;
+}
+
+#dialog {
+  margin: 5vh 2vw;
+  height: 100vh;
+  width: 35vw;
+  overflow: hidden;
+}
+
+#dialog form {
+  display: flex;
+  transition: all 0.2s ease;
+}
+
+#dialog section {
+  background: white;
+  position: relative;
+  border: 2px solid black;
+  padding: 4vh 2vw;
+  height: 80vh;
+  min-width: 35vw;
+  overflow-y: auto;
+}
+
+#dialog form > section > div {
+  display: flex;
+  gap: 4vw;
+}
+
+#dialog h1 {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 100;
+  margin-bottom: 3vh;
+}
+#dialog h3 {
+  font-family: "rajdhani", sans-serif;
+  font-weight: 100;
+  margin-top: 5vh;
+}
+
+#dialog input[type="checkbox"] {
+  position: relative;
+  display: block;
+  width: 2vw;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  accent-color: purple;
+  appearance: none;
+  border: 1px solid purple;
+}
+
+#dialog input[type="checkbox"]:checked {
+  border: 2px solid black;
+}
+
+#dialog input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+  border-color: black;
+  opacity: 0.5;
+}
+
+#dialog input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(0);
+  transition: 300ms transform ease;
+  background-color: purple;
+}
+
+#dialog input[type="checkbox"]:disabled:before {
+  background-color: purple;
+  transform: scale(1);
+}
+
+#dialog input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  box-shadow: 2px 2px 0 white inset, -2px -2px 0 white inset;
+}
+
+#dialog input[type="text"] {
+  display: block;
+  width: 20vw;
+  padding: 2vh 1vw;
+  font-family: "Raleway", sans-serif;
+  margin: 2vh 0;
+  border-radius: 0;
+  border: 1px solid black;
+}
+
+#dialog input[type="text"]:focus {
+  outline: 2px solid purple;
+  border: 1px solid purple;
+}
+
+#dialog button[type="submit"] {
+  position: relative;
+  display: block;
+  background: purple;
+  color: white;
+  font-family: "Audiowide", sans-serif;
+  padding: 2vh 1vw;
+  border: none;
+  margin: 3vh 0;
+  transition: all 0.2s ease;
+  z-index: 2;
+  cursor: pointer;
+}
+
+#dialog button[type="submit"]::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  z-index: -1;
+  background-color: #1b1212;
+  transition: all 0.2s ease;
+}
+
+#dialog button[type="submit"]:hover {
+  box-shadow: 0 0 0 black;
+}
+
+#dialog button[type="submit"]:hover::before {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.two-seat-row {
+  display: grid;
+  gap: 15px 5px;
+  grid-template-columns: repeat(2, 2vw);
+}
+
+.three-seat-row {
+  display: grid;
+  gap: 15px 5px;
+  grid-template-columns: repeat(3, 2vw);
+}
+
+.section-nav-btn {
+  position: absolute;
+  bottom: 10px;
+  border: none;
+  padding: 2vh 1vw;
+  color: purple;
+  background-color: white;
+  border: 1px solid purple;
+  border-radius: 3px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.closeModalBtn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  font-size: 3vmax;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.closeModalBtn:hover {
+  transform: rotate(180deg);
+}

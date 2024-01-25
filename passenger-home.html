@@ -1,0 +1,164 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BusEasy - Passenger Page</title>
+    <link rel="icon" href="./assets/title-logo.png" type="image/icon" />
+    <link rel="stylesheet" href="css/passenger.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/buses.css" />
+    <script
+      src="https://kit.fontawesome.com/46811f7e38.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+
+  <body>
+    <!-- CODE FOR NAVBAR -->
+    <nav>
+      <a href="passenger-home.html"><img src="assets/bus-logo.png" alt="" srcset=""></a>
+      <div>
+        <a class="active-link" href="passenger-home.html">Home</a>
+        <a href="ticket.html">Tickets</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="buses.html">Buses</a>
+      </div>
+      <div>
+        <a id="logout">Logout</a>
+      </div>
+    </nav>
+
+    <div class="wallpaper-div">
+      <div class="head-div">
+        <h1 class="main-head">BusEasy</h1>
+      </div>
+
+      <section class="busSelector">
+        <select name="" id="from-select">
+          <option disabled hidden selected value="none">
+            Select from destination
+          </option>
+        </select>
+        <select name="" id="to-select">
+          <option disabled hidden selected value="none">
+            Select to destination
+          </option>
+        </select>
+        <button id="findBusBtn">Find Buses</button>
+      </section>
+    </div>
+
+    <section class="busToShow"></section>
+
+    <section class="modalForSeatSelection"></section>
+
+    <section class="travel-to-places">
+      <h3>Explore, Book, and Journey:</h3>
+      <div class="destinations">
+        <div class="dest">
+          <h6
+            title="Dhanushkodi: Where Time Stands Still, and Adventures Begin."
+          >
+            Dhanushkodi
+          </h6>
+          <img src="./assets/dhanushkodi.jpg" alt="" />
+        </div>
+        <div class="dest">
+          <h6 title="Kashmir: Paradise Found, Journey Unbound.">Kashmir</h6>
+          <img src="./assets/kashmir.jpg" alt="" />
+        </div>
+        <div class="dest">
+          <h6
+            title="Kedarnath: Where Spirituality Meets Serenity - Explore the Divine Charms of Himalayan Tranquility."
+          >
+            Kedarnath
+          </h6>
+          <img src="./assets/kedarnath.jpg" alt="" />
+        </div>
+        <div class="dest">
+          <h6 title="Discover Ayodhya: Where Heritage Meets Harmony.">
+            Ayodhya
+          </h6>
+          <img src="./assets/ayodhya.jpg" alt="" />
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>Is it mandatory to take a printout of the ticket ?</summary>
+        <div>
+          It depends on the bus operator you have booked your ticket with. Even
+          mTickets are available on redBus. For operators that support mTickets,
+          the SMS that is sent to your mobile can be produced at the time of
+          boarding and you will be allowed to travel. <br /><br />
+          For operators that do not support mTickets it is a must to take a
+          printout of the e-ticket and produce it at the time of boarding. The
+          e-ticket is sent to the e-mail ID provided at the time of boarding.
+        </div>
+      </details>
+      <details>
+        <summary>I've lost my ticket. What should I do now ?</summary>
+        <div>
+          A copy of the ticket would have been sent to you by e-mail when you
+          booked it. Please take a printout of that mail and produce it at the
+          time of boarding. If you have not received the ticket e-mail, please
+          call any of our call centers and our executive will re-send you a copy
+          by mail.
+        </div>
+      </details>
+      <details>
+        <summary>What is an mTicket ?</summary>
+        <div>
+          An mTicket is an SMS that is sent to your mobile on booking a ticket
+          with select operators. This SMS has the TIN number and the PNR number
+          along with other ticket related information. It can be used to board
+          the bus. Please note that not all operators accept mTickets. To know
+          which operators are mTicket enabled, look for the mTicket icon under
+          the mTicket column while searching for buses.
+        </div>
+      </details>
+      <details>
+        <summary>Does booking online cost me more ?</summary>
+        <div>
+          Not at all! The price of the bus ticket is the same as you would get
+          from the bus operator too.The price of hotel voucher is the same or
+          sometimes discounted depending on the season/time.
+        </div>
+      </details>
+    </section>
+
+    <footer>
+      <div class="footer-div1">
+        <div class="year">2003</div>
+        <div class="location">Bhopal, India</div>
+      </div>
+      <div class="footer-div2">
+        <div>
+          <div>Get in touch</div>
+          <div>mohitpatel1502@gmail.com</div>
+          <div>mohitpatelforwork@gmail.com</div>
+        </div>
+        <div>
+          <div>Connect</div>
+          <div>Linkedin</div>
+          <div>Instagram</div>
+        </div>
+        <div>
+          <div>Main Office</div>
+          <div>M.P. Nagar, Bhopal, 466445, Madhya Pradesh, India</div>
+        </div>
+      </div>
+      <div class="footer-div3">
+        <div>
+          <div>BusEasy by Mak Corp.</div>
+          <div id="copyright"></div>
+        </div>
+        <button id="topBtn"><i class="fa-solid fa-arrow-up"></i> Top</button>
+      </div>
+    </footer>
+    <script type="module" src="js/passenger.js"></script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BusEasy - Contact Page</title>
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/contact-us.css" />
+    <link rel="icon" href="assets/title-logo.png" type="image/icon" />
+    <script
+      src="https://kit.fontawesome.com/46811f7e38.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- CODE FOR NAVBAR -->
+
+    <nav>
+      <a href="passenger-home.html"><img src="assets/bus-logo.png" alt="" srcset=""></a>
+      <div>
+        <a href="passenger-home.html">Home</a>
+        <a href="ticket.html">Tickets</a>
+        <a class="active-link" href="contact-us.html">Contact Us</a>
+        <a href="buses.html">Buses</a>
+      </div>
+    </nav>
+
+    <section class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10568.126830837444!2d77.41969306074566!3d23.234346660237083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c4269deb07df9%3A0xfee61a854a2e5374!2sMaharana%20Pratap%20Nagar%2C%20Bhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1699637954283!5m2!1sen!2sin"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </section>
+
+    <section class="contact-details">
+      <div class="footer-div1">
+        <div>
+          <div>Get in touch</div>
+          <div><a href="#">mohitpatel1502@gmail.com</a></div>
+          <div><a href="#">mohitpatelforwork@gmail.com</a></div>
+        </div>
+        <div>
+          <div>Connect</div>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <div>
+          <div>Main Office</div>
+          <div>M.P. Nagar, Bhopal, 466445, Madhya Pradesh, India</div>
+        </div>
+      </div>
+      <div class="footer-div2">
+        <div>
+          <div>BusEasy by Mak Corp.</div>
+          <div id="copyright"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="exit-note">
+      <div>
+        <div>
+          <img src="./assets/title-logo.png" alt="" />
+          <h4>BusEasy</h4>
+        </div>
+        <p>
+          Your journey matters to us. Reach out for any assistance, feedback, or
+          inquiries. Our team is dedicated to ensuring your travels are
+          seamless, safe, and memorable. Thank you for choosing us to be part of
+          your adventure!
+        </p>
+      </div>
+    </section>
+
+    <script>
+      let copyrightDiv = document.getElementById("copyright");
+      let date = new Date();
+      copyrightDiv.innerHTML = `&copy; ` + date.getFullYear();
+      window.addEventListener("load", () => {
+        if (!localStorage.getItem("token"))
+          window.location.replace("index.html");
+      });
+    </script>
+  </body>
+</html>

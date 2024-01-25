@@ -1,0 +1,95 @@
+/* IMPORT STATEMENTS */
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@500&family=Raleway&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+}
+
+.heading {
+  height: 15vh;
+  background: purple;
+  border-bottom: 1px solid black;
+  color: white;
+}
+
+h1 {
+  padding: 2vh 0;
+  font-family: "Audiowide", sans-serif;
+  font-size: 4vmax;
+  font-weight: 100;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  height: 85vh;
+}
+
+.welcome-text{
+  padding: 10vh 0;
+  font-family: 'Raleway';
+  font-size: 1.5vmax;
+  width: 30vw;
+}
+
+.welcome-text strong{
+  font-family: 'Audiowide' , sans-serif;
+  font-weight: 100;
+}
+
+.welcome-text a{
+  border: none;
+  background-color: purple;
+  color: white;
+  text-decoration: none ;
+  padding: 2vh 1vw;
+  font-family: 'Rajdhani' , sans-serif;
+  font-weight: 700;
+  font-size: 1.3vmax;
+  position: relative;
+  border: 1px solid purple;
+  cursor: pointer;
+}
+
+.welcome-text a::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 8%;
+  background: white;
+  transition: all .3s ease;
+}
+
+.welcome-text a:hover::before{
+  left: 0;
+  width: 100%;
+}
+
+.blob {
+  overflow: hidden;
+  display: inline-block;
+  height: 90vh;
+  position: relative;
+}
+
+.blob img {
+  width: 100%;
+  height: 100%;
+  mask-image: url("../assets/home-page-blob.png");
+  -webkit-mask-image: url("../assets/home-page-blob.png");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  object-fit: cover;
+  transition: all .3s ease-in-out;
+}

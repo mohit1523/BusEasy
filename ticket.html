@@ -1,0 +1,38 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BusEasy - Ticket Page</title>
+    <link rel="stylesheet" href="css/ticket.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="icon" href="assets/title-logo.png" type="image/icon" />
+    <script
+      src="https://kit.fontawesome.com/46811f7e38.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+  </head>
+  <body>
+    <img src="./assets/bus-wallpaper-3.png" alt="" id="wallpaper" />
+    <!-- CODE FOR NAVBAR -->
+    <nav>
+      <a href="passenger-home.html"
+        ><img src="assets/bus-logo.png" alt="" srcset=""
+      /></a>
+      <div>
+        <a href="passenger-home.html">Home</a>
+        <a class="active-link" href="ticket.html">Tickets</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="buses.html">Buses</a>
+      </div>
+    </nav>
+
+    <section class="my-tickets">
+      <h3>My Tickets:</h3>
+      <div class="tickets"></div>
+    </section>
+
+    <script type="module" src="js/ticket.js"></script>
+  </body>
+</html>
