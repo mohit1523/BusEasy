@@ -9,7 +9,6 @@ a {
 
 .map iframe {
   width: 100%;
-  pointer-events: none;
 }
 
 .contact-details {
