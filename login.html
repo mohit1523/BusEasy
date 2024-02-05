@@ -4,28 +4,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BusEasy - Login page</title>
     <link rel="stylesheet" href="css/login-and-signup.css" />
+    <script src="https://kit.fontawesome.com/46811f7e38.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
-    <a href="signup.html" class="redirectBtn">Signup</a>
-    <form action="" id="loginForm" autocomplete="off">
-      <h1>Login to BusEasy</h1>
-      <h4>Email ID :-</h4>
-      <input
-        placeholder="Enter your email"
-        type="email"
-        name="email"
-        id="email"
-      />
-      <h4>Password :-</h4>
-      <input
-        placeholder="Enter your password"
-        type="password"
-        name="password"
-        id="password"
-      />
-      <button id="submitBtn" type="submit">Submit</button>
-    </form>
+    <div class="sidebar">
+      <div class="active">
+        <a href="login.html" class="redirectBtn">Login</a>
+      </div>
+      <div><a href="signup.html" class="redirectBtn">Signup</a></div>
+    </div>
+
+    <div class="main-content">
+      <form action="" id="loginForm" autocomplete="off">
+        <img src="assets/bus-logo.png" alt="" />
+        <h1>Login to BusEasy</h1>
+        <div>
+          <i class="fa-regular fa-circle-user"></i>
+          <input
+            placeholder="Email"
+            type="email"
+            name="email"
+            id="email"
+          />
+        </div>
+        <div>
+          <i class="fa-solid fa-lock"></i>
+          <input
+          placeholder="Password"
+          type="password"
+          name="password"
+            id="password"
+          />
+        </div>
+        <button id="submitBtn" type="submit">Submit</button>
+      </form>
+    </div>
     <script src="js/login.js"></script>
   </body>
 </html>

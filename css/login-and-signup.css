@@ -9,123 +9,144 @@
 body {
   height: 100vh;
   width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.sidebar{
+  height: 100vh;
+  width: 25vw;
+  background-color: purple;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: end;
+}
+
+.sidebar div{
+  position: relative;
+  padding: 4vh 5vw;
+  border-radius: 50vw 0 0 50vw;
+}
+
+.sidebar a{
+  color: black;
+  text-decoration: none;
+  font-family: 'Audiowide';
+  font-size: 2vmax;
+}
+
+.active{
+  background-color: white;
+}
+
+.active::before{
+  content: '';
+  position: absolute;
+  top: -5vh;
+  right: 0;
+  height: 5vh;
+  aspect-ratio: 1/1;
+  background-color: purple;
+  border-radius: 0 0 50vw;
+  box-shadow: 1px 1px 0 white, 8px 8px 0 white;
+}
+
+.active::after{
+  content: '';
+  position: absolute;
+  bottom: -5vh;
+  right: 0;
+  height: 5vh;
+  aspect-ratio: 1/1;
+  background-color: purple;
+  border-radius: 0 50vw 0 0;
+  box-shadow: 1px -1px 0 white, 8px -8px 0 white;
+}
+
+.main-content{
+  width: 75vw;
+  padding: 0px 5vw;
   display: grid;
   place-items: center;
 }
 
-.redirectBtn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 1vh 2vw;
+.main-content form{
+    height: 100vh;
+  display: flex;
   width: fit-content;
-  font-size: 1.5vmax;
-  background: purple;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-content img{
+  width: 10vw;
+  margin: 3vh 0;
+}
+
+.main-content h1{
+  font-size: 3vmax;
+  font-family: 'Rajdhani', sans-serif;
+  margin-bottom: 5vh;
+}
+
+.main-content div{
+  border-bottom: 1px solid gray;
+  padding: 2vh 2vw 2vh 0;
+  margin: 2vh 0;
+  color: gray;
+}
+
+.main-content input{
   border: none;
-  border-radius: 3px;
-  font-family: "Audiowide", sans-serif;
-  cursor: pointer;
-  z-index: 1;
-  overflow: hidden;
-  border: 1px solid purple;
-  text-decoration: none;
-  color: white;
-}
-
-.redirectBtn::before {
-  position: absolute;
-  content: "";
-  width: 0;
-  aspect-ratio: 1 / 1;
-  border-radius: 50vw;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  background-color: white;
-  transition: all 0.2s ease;
-}
-
-.redirectBtn:hover::before {
-  top: -50%;
-  left: -50%;
-  width: 200%;
-}
-
-.redirectBtn:hover {
-  color: purple;
-}
-
-form {
-  border: 1px solid black;
-  padding-bottom: 2vh;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-h1 {
-  font-family: "Rajdhani", sans-serif;
-  font-size: 4vmax;
-  background-color: purple;
-  padding: 2vh 4vw;
-  margin-bottom: 2vh;
-  color: white;
-}
-
-h4 {
-  font-family: "Raleway", sans-serif;
-  padding: 2vh 4vw;
-  font-size: 1.5vmax;
-}
-
-input,
-select,
-#submitBtn {
-  margin: 0 0 2vh 4vw;
-  padding: 1vh 2vw;
-  display: block;
-  width: 70%;
-  font-family: "Rajdhani", sans-serif;
-  font-size: 1.1vmax;
-  font-weight: 800;
-}
-
-#submitBtn {
-  width: fit-content;
-  font-size: 1.5vmax;
-  background: transparent;
-  border: none;
-  position: relative;
-  border-radius: 3px;
-  border: 1px solid purple;
-  cursor: pointer;
-  z-index: 1;
-}
-
-#submitBtn::before {
-  position: absolute;
-  content: "";
-  width: 0;
-  height: 0;
-  top: 50%;
-  left: 50%;
-  z-index: -1;
-  background-color: purple;
-  transition: all 0.2s ease;
-}
-
-#submitBtn:hover::before {
-  top: 0;
-  left: 0;
-  width: 100%;
   height: 100%;
+  width: 25vw;
+  padding-left: 1vw;
+  outline: none;
+}
+
+.main-content input::placeholder{
+  color: gray;
+}
+
+#submitBtn{
+  position: relative;
+  margin: 4vh 0;
+  padding: 2vh 2vw;
+  align-self: self-end;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.5vmax;
+  border: 1px solid purple;
+  border-radius: 50vw;
+  color: white;
+  background: white;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 0;
+  transition: all .3s ease-in-out;
+}
+
+#submitBtn::before{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: calc(100% - 5px);
+  width: calc(100% - 5px);
+  background-color: purple;
+  border-radius: 50vw;
+  z-index: -1;
+  transition: all .3s ease-in-out;
 }
 
 #submitBtn:hover{
-  color: white;
+  color: black;
 }
 
-option {
-  font-weight: 800;
-  color: purple;
-  font-family: "Rajdhani", sans-serif;
+#submitBtn:hover::before{
+  height: 0;
+  width: 0;
 }
