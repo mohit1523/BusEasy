@@ -14,7 +14,7 @@ body {
   overflow: hidden;
 }
 
-.sidebar{
+.sidebar {
   height: 100vh;
   width: 25vw;
   background-color: purple;
@@ -24,25 +24,25 @@ body {
   align-items: end;
 }
 
-.sidebar div{
+.sidebar div {
   position: relative;
   padding: 4vh 5vw;
   border-radius: 50vw 0 0 50vw;
 }
 
-.sidebar a{
+.sidebar a {
   color: black;
   text-decoration: none;
-  font-family: 'Audiowide';
+  font-family: "Audiowide";
   font-size: 2vmax;
 }
 
-.active{
+.active {
   background-color: white;
 }
 
-.active::before{
-  content: '';
+.active::before {
+  content: "";
   position: absolute;
   top: -5vh;
   right: 0;
@@ -53,8 +53,8 @@ body {
   box-shadow: 1px 1px 0 white, 8px 8px 0 white;
 }
 
-.active::after{
-  content: '';
+.active::after {
+  content: "";
   position: absolute;
   bottom: -5vh;
   right: 0;
@@ -65,15 +65,15 @@ body {
   box-shadow: 1px -1px 0 white, 8px -8px 0 white;
 }
 
-.main-content{
+.main-content {
   width: 75vw;
   padding: 0px 5vw;
   display: grid;
   place-items: center;
 }
 
-.main-content form{
-    height: 100vh;
+.main-content form {
+  height: 100vh;
   display: flex;
   width: fit-content;
   flex-direction: column;
@@ -81,25 +81,25 @@ body {
   justify-content: center;
 }
 
-.main-content img{
+.main-content img {
   width: 10vw;
   margin: 3vh 0;
 }
 
-.main-content h1{
+.main-content h1 {
   font-size: 3vmax;
-  font-family: 'Rajdhani', sans-serif;
+  font-family: "Rajdhani", sans-serif;
   margin-bottom: 5vh;
 }
 
-.main-content div{
+.main-content div {
   border-bottom: 1px solid gray;
   padding: 2vh 2vw 2vh 0;
   margin: 2vh 0;
   color: gray;
 }
 
-.main-content input{
+.main-content input {
   border: none;
   height: 100%;
   width: 25vw;
@@ -107,46 +107,25 @@ body {
   outline: none;
 }
 
-.main-content input::placeholder{
+.main-content input::placeholder {
   color: gray;
 }
 
-#submitBtn{
+#submitBtn {
   position: relative;
   margin: 4vh 0;
   padding: 2vh 2vw;
   align-self: self-end;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Audiowide", sans-serif;
   font-size: 1.5vmax;
   border: 1px solid purple;
   border-radius: 50vw;
-  color: white;
   background: white;
   font-weight: 900;
   cursor: pointer;
-  z-index: 0;
-  transition: all .3s ease-in-out;
-}
-
-#submitBtn::before{
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  height: calc(100% - 5px);
-  width: calc(100% - 5px);
-  background-color: purple;
-  border-radius: 50vw;
-  z-index: -1;
-  transition: all .3s ease-in-out;
+  transition: all 600ms ease;
 }
 
 #submitBtn:hover{
-  color: black;
-}
-
-#submitBtn:hover::before{
-  height: 0;
-  width: 0;
+  border-radius: 5px;
 }
