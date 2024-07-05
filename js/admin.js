@@ -42,7 +42,7 @@ addBusForm.addEventListener("submit", async (e) => {
   let seatNum = document.getElementById("seat-num");
   let fromTime = document.getElementById("from-time");
   let toTime = document.getElementById("to-time");
-  await fetch("http://localhost:3000/bus/createbus", {
+  await fetch("https://bus-easy-api.vercel.app/bus/createbus", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -92,7 +92,7 @@ logoutBtn.addEventListener("click", () => {
 
 // CODE TO SHOW ALL BUSES
 
-fetch("http://localhost:3000/bus/allbuses", {
+fetch("https://bus-easy-api.vercel.app/bus/allbuses", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",

@@ -3,7 +3,7 @@
 import { createTicket } from "./createTicket.js";
 let ticketToShow = document.querySelector(".tickets");
 
-fetch("http://localhost:3000/ticket/alltickets", {
+fetch("https://bus-easy-api.vercel.app/ticket/alltickets", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",

@@ -124,7 +124,7 @@ export function showAndSelectSeatModal(container, busNumber, totalSeats, seatArr
         if (passwordOfCurrUser === null) { }
         else if (passwordOfCurrUser.trim() === "") alert('Enter your password')
         else {
-            fetch("http://localhost:3000/ticket/bookticket", {
+            fetch("https://bus-easy-api.vercel.app/ticket/bookticket", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

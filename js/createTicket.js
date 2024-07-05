@@ -38,7 +38,7 @@ export async function createTicket(
     if (passwordOfUser === null) { }
     else if (passwordOfUser.trim() === "") alert('Enter your password');
     else {
-      await fetch('http://localhost:3000/ticket/deleteticket', {
+      await fetch('https://bus-easy-api.vercel.app/ticket/deleteticket', {
         method: 'DELETE',
         headers: {
           "Content-Type": "application/json",
@@ -72,7 +72,7 @@ export async function createTicket(
   tableRow.innerHTML = '<td>From :</td><td>To :</td>';
   table.append(tableRow);
 
-  await fetch('http://localhost:3000/bus/findbus', {
+  await fetch('https://bus-easy-api.vercel.app/bus/findbus', {
     method: 'POST',
     headers: {
       "Content-Type": "application/json"

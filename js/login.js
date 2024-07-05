@@ -9,7 +9,7 @@ let loginForm = document.getElementById("loginForm");
 
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  await fetch("http://localhost:3000/user/loginuser", {
+  await fetch("https://bus-easy-api.vercel.app/user/loginuser", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

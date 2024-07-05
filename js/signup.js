@@ -12,7 +12,7 @@ let signUpForm = document.getElementById("signupForm");
 signUpForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   if (passwordOfUser.value === confirmPasswordOfUser.value) {
-    await fetch("http://localhost:3000/user/createuser", {
+    await fetch("https://bus-easy-api.vercel.app/user/createuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -22,7 +22,7 @@ let toLocSelect = document.getElementById("to-select");
 let fromArr = [];
 let toArr = [];
 
-fetch("http://localhost:3000/bus/allbuses", {
+fetch("https://bus-easy-api.vercel.app/bus/allbuses", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
@@ -62,7 +62,7 @@ findBusBtn.addEventListener("click", async () => {
   } else if (fromLocSelect.value === toLocSelect.value) {
     alert("From and To location can not be same");
   } else {
-    await fetch("http://localhost:3000/bus/findbuses", {
+    await fetch("https://bus-easy-api.vercel.app/bus/findbuses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

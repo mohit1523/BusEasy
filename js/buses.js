@@ -6,7 +6,7 @@ window.addEventListener("load", () => {
 
 let busToShowSection = document.querySelector('.busToShow');
 
-fetch("http://localhost:3000/bus/allbuses", {
+fetch("https://bus-easy-api.vercel.app/bus/allbuses", {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
