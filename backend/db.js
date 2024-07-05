@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const URL = "mongodb://127.0.0.1:27017/busdb";
+const URL = "mongodb+srv://mohit1502:pCAWZsiL567D97Et@mak.4zerk6q.mongodb.net/busdb?retryWrites=true&w=majority&appName=Mak";
 
 const DBConnect = async () => {
     try {
