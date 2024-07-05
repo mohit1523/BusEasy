@@ -12,9 +12,11 @@ DBconnect();
 app.use(cors());
 app.use(express.json())
 
-app.use('/bus' , busRoute);
-app.use('/user' , userRoute);
-app.use('/ticket' , ticketRoute);
+app.use('/bus', busRoute);
+app.use('/user', userRoute);
+app.use('/ticket', ticketRoute);
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
 
 app.listen(PORT, () => {
   console.log(`App listening at port ${PORT}`);
