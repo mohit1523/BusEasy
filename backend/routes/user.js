@@ -78,11 +78,7 @@ router.post("/loginuser", async (req, res) => {
 router.get('/getOwners', async (req, res) => {
   const owners = await User.find({ role: "busOwner" });
 
-  if (owners.length === 0) {
-    return res.status(204).send({ hasOwners: false });
-  }
-
-  return res.status(200).send({owners: owners, hasOwners: true});
+  return res.status(200).send(owners);
 })
 
 module.exports = router;
