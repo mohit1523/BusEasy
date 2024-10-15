@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Bus = require("../models/BusModel");
+const verifyUser = require("../middleware/verifyuser");
 
 router.get("/allbuses", async (req, res) => {
   try {
@@ -11,13 +12,14 @@ router.get("/allbuses", async (req, res) => {
   }
 });
 
-router.post("/createbus", async (req, res) => {
+router.post("/createbus", verifyUser, async (req, res) => {
   try {
     const b = await Bus.findOne({ busNumber: req.body.busNumber });
     if (b) {
       return res.status(201).send({ msg: "Bus already exists" });
     }
     let newBus = new Bus({
+      busOwner: req.userId,
       busNumber: req.body.busNumber,
       name: req.body.name,
       from: req.body.from,

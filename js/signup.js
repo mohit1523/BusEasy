@@ -23,7 +23,7 @@ signUpForm.addEventListener("submit", async (e) => {
         name: nameOfUser.value,
         email: emailOfUser.value,
         password: passwordOfUser.value,
-        role: role
+        role: role.value
       }),
     })
       .then((response) => {
@@ -37,6 +37,9 @@ signUpForm.addEventListener("submit", async (e) => {
         }
         else if (data.msg === 'Admin Created') {
           location.replace('admin.html');
+        }
+        else if(data.msg === 'Bus Owner Created'){
+          location.replace('bus-owner.html');
         }
       })
       .catch((error) => {

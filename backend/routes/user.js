@@ -28,11 +28,11 @@ router.post("/createuser", async (req, res) => {
         };
         const token = jwt.sign(payload, privateKey);
 
-        if (req.body.name === 'admin' && req.body.email === 'admin@gmail.com') {
+        if (req.body.name === 'admin' && req.body.role === 'admin' && req.body.email === 'admin@gmail.com') {
           return res.status(200).send({ msg: "Admin Created", token: token });
         }
-        else if(req.body.role === 'busOwner'){
-          return res.status(200).send({ msg: "Bus Owner Created", token: token });          
+        else if (req.body.role === 'busOwner') {
+          return res.status(200).send({ msg: "Bus Owner Created", token: token });
         }
 
         return res.status(200).send({ msg: "User Created", token: token });
@@ -74,5 +74,15 @@ router.post("/loginuser", async (req, res) => {
     console.error(error);
   }
 });
+
+router.get('/getOwners', async (req, res) => {
+  const owners = await User.find({ role: "busOwner" });
+
+  if (!owners) {
+    return res.status(204).send({ hasOwners: false });
+  }
+
+  return res.status(200).send({owners: owners, hasOwners: true});
+})
 
 module.exports = router;

@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const busSchema = new Schema({
+  busOwner: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   busNumber: {
     type: String,
     required: true,

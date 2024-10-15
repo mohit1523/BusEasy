@@ -1,0 +1,110 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BusEasy - Bus Owner Page</title>
+    <link rel="icon" href="assets/title-logo.png" type="image/icon" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/bus-owner.css" />
+    <link rel="stylesheet" href="css/buses.css">
+    <script
+      src="https://kit.fontawesome.com/46811f7e38.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <nav>
+      <a href="passenger-home.html"><img src="assets/bus-logo.png" alt="" srcset=""></a>
+      <div>
+        <a id="logout">Logout</a>
+      </div>
+    </nav>
+    <div class="heading">
+      <h1>Welcome to Bus Operator Admin Page</h1>
+    </div>
+
+    <button class="addBus">Add a new Bus</button>
+
+    <h3>Buses :-</h3>
+    <div class="buses"></div>
+
+    <div class="main-toogle-box">
+      <div class="toogle-box">
+        <div class="cancel">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <form action="">
+          <h3>Name of the bus :-</h3>
+          <input
+            placeholder="Enter the name of Bus"
+            type="text"
+            name="bus-name"
+            id="bus-name"
+            required
+          />
+          <h3>Enter number of seats in the bus<br>( Should be a multiple of 5 )</h3>
+          <input
+            placeholder="Number of seats"
+            type="number"
+            name="number-of-seats"
+            id="seat-num"
+            required
+          />
+          <h3>Bus starting point</h3>
+          <input
+            placeholder="Enter the starting point"
+            type="text"
+            name="from-loc"
+            id="from-loc"
+            required
+          />
+          <h3>Bus ending point</h3>
+          <input
+            placeholder="Enter the ending point"
+            type="text"
+            name="to-loc"
+            id="to-loc"
+            required
+          />
+          <h3>Bus timing</h3>
+          <table>
+            <tr>
+              <td>From :-</td>
+              <td>To :-</td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="time"
+                  name="from-time"
+                  id="from-time"
+                  required
+                />
+              </td>
+              <td>
+                <input
+                  type="time"
+                  name="to-time"
+                  id="to-time"
+                  required
+                />
+              </td>
+            </tr>
+          </table>
+          <h3>Enter the number of bus</h3>
+          <input
+            type="text"
+            name="bus-number"
+            id="bus-number"
+            placeholder="Enter the number of the Bus"
+            required
+          />
+          <button type="submit" class="addNewBus">Add a new Bus</button>
+        </form>
+      </div>
+    </div>
+
+    <script type="module" src="js/admin.js"></script>
+  </body>
+</html>

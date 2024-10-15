@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  input {
+    outline: none;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px dashed purple;
+  }
+  
+  .heading {
+    font-family: "Audiowide";
+    font-weight: 100;
+    text-align: center;
+    padding: 5vh 0;
+  }
+  
+  .addBus , .addNewBus{
+    border: 2px solid purple;
+    border-radius: 5px;
+    z-index: 1;
+    padding: 2vh 1vw;
+    font-size: 1.5vmax;
+    margin: 2vh 2vw;
+    font-weight: 900;
+    cursor: pointer;
+    font-family: "Rajdhani", sans-serif;
+    background: none;
+    position: relative;
+    display: block;
+  }
+  
+  .addBus::before , .addNewBus::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 3%;
+    background: purple;
+    transition: all 0.3s ease;
+  }
+  
+  .addBus:hover::before ,.addNewBus:hover::before {
+    left: 0;
+    width: 100%;
+  }
+  
+  h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: 2vmax;
+    padding: 2vh 2vw;
+  }
+  
+  .buses{
+    padding: 2vh 2vw;
+  }
+  
+  .bus {
+    border: 1px solid;
+    width: 40vw;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 1.5vmax;
+    font-family: "Raleway", sans-serif;
+  }
+  
+  .bus-name {
+    background-color: purple;
+    text-align: center;
+    color: white;
+    padding: 1vh 0;
+    font-size: 2vmax;
+    font-family: "Audiowide", sans-serif;
+  }
+  
+  .start-end-pos,
+  .seat,
+  .timing {
+    padding: 2vh 2vw;
+    font-size: 1.5vmax;
+    font-family: "Rajdhani" , sans-serif;
+  }
+  
+  .number-plate{
+    color: white;
+    background-color: black;
+    padding: 2vh 2vw;
+    text-align: center;
+    font-family: 'Audiowide' , sans-serif;
+  }
+  
+  /* CODE FOR TOOGLE BOX */
+  
+  .main-toogle-box {
+    width: 0%;
+    height: 0%;
+    top: 50%;
+    left: 50%;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+    pointer-events: none;
+    transition: all .2s ease;
+    z-index: 5;
+  }
+  
+  .toogle-box h3 {
+    font-size: 1.5vmax;
+  }
+  
+  .toogle-box {
+    height: 75%;
+    width: 50%;
+    overflow: auto;
+    pointer-events: all;
+    position: relative;
+    cursor: initial;
+    border: 0px solid purple;
+    border-radius: 5px;
+    padding: 2vh 0;
+    background: white;
+    box-shadow: 0 0 15px black;
+  }
+  
+  .cancel {
+    position: absolute;
+    width: min-content;
+    top: 2vh;
+    right: 2vw;
+    font-size: 2vmax;
+    cursor: pointer;
+    text-shadow: 0 0 0px purple;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .cancel:hover {
+    text-shadow: 0 0 5px purple;
+  }
+  
+  .toogle-box > form > input {
+    margin: 1vh 2vw;
+    font-family: "Raleway", sans-serif;
+  }
+  .toogle-box > form input::placeholder {
+    font-size: 1vmax;
+  }
+  
+  .toogle-box td {
+    padding: 1vh 2vw;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.2vmax;
+  }
+  
+  .toogle-box td input{
+    width: 15vw;
+  }
+  
+  #bus-name,
+  #bus-number {
+    width: 75%;
+  }
+  
