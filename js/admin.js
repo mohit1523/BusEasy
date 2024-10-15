@@ -11,12 +11,12 @@ fetch('https://bus-easy-api.vercel.app/user/getOwners', {
         return result.json()
     })
     .then((data) => {
-        if(data.length === 0){
-            allOwners.innerHTML = "<h3>No owners exists.</h3>";
-            return;
+        if (data.length) {
+            data.forEach((elem) => {
+                allOwners.append(elem);
+            })
         }
-
-        data.owners.forEach((elem) => {
-            allOwners.append(elem);
-        })
+        else {
+            allOwners.innerHTML = "<h3>No owners exists.</h3>";
+        }
     })
