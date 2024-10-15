@@ -92,6 +92,12 @@ body {
   margin-bottom: 5vh;
 }
 
+.form-section{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 3vw;
+}
+
 .main-content div {
   border-bottom: 1px solid gray;
   padding: 2vh 2vw 2vh 0;
@@ -111,11 +117,17 @@ body {
   color: gray;
 }
 
+#role-option{
+  outline: none;
+  border: none;
+  width: 25vw;
+}
+
 #submitBtn {
   position: relative;
   margin: 4vh 0;
   padding: 2vh 2vw;
-  align-self: self-end;
+  align-self: self-start;
   font-family: "Audiowide", sans-serif;
   font-size: 1.5vmax;
   border: 1px solid purple;

@@ -7,11 +7,11 @@ const privateKey = "Mohit1502@#";
 
 router.post("/createuser", async (req, res) => {
   try {
-    const existingUser = await User.findOne({ email: req.body.email });
+    const existingUser = await User.findOne({ email: req.body.email, role: req.body.role });
 
     if (existingUser) {
       return res.status(201).send({
-        msg: "User with the same email exists. Enter another email",
+        msg: "User doesn't exists. Try again",
       });
     } else {
       bcrypt.hash(req.body.password, 10, async function (err, hash) {
@@ -20,16 +20,21 @@ router.post("/createuser", async (req, res) => {
           name: req.body.name,
           email: req.body.email,
           password: hash,
+          role: req.body.role
         });
-
-        if (req.body.name === 'admin' && req.body.email === 'admin@gmail.com') {
-          return res.status(200).send({ msg: "Admin Created", token: token });
-        }
 
         const payload = {
           userId: newUser.id,
         };
         const token = jwt.sign(payload, privateKey);
+
+        if (req.body.name === 'admin' && req.body.email === 'admin@gmail.com') {
+          return res.status(200).send({ msg: "Admin Created", token: token });
+        }
+        else if(req.body.role === 'busOwner'){
+          return res.status(200).send({ msg: "Bus Owner Created", token: token });          
+        }
+
         return res.status(200).send({ msg: "User Created", token: token });
       });
     }

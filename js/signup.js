@@ -2,15 +2,17 @@ window.addEventListener("load", () => {
   if (localStorage.getItem("token")) window.location.replace("passenger-home.html");
 });
 
-let nameOfUser = document.getElementById("name");
-let emailOfUser = document.getElementById("email");
-let passwordOfUser = document.getElementById("password");
-let confirmPasswordOfUser = document.getElementById("confirm-password");
-
-let signUpForm = document.getElementById("signupForm");
+let signUpForm = document.forms["signupForm"];
 
 signUpForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+
+  let nameOfUser = signUpForm.elements["name"];
+  let emailOfUser = signUpForm.elements["email"];
+  let passwordOfUser = signUpForm.elements["password"];
+  let confirmPasswordOfUser = signUpForm.elements["confirm-password"];
+  let role = signUpForm.elements["role-option"];
+
   if (passwordOfUser.value === confirmPasswordOfUser.value) {
     await fetch("https://bus-easy-api.vercel.app/user/createuser", {
       method: "POST",
@@ -21,6 +23,7 @@ signUpForm.addEventListener("submit", async (e) => {
         name: nameOfUser.value,
         email: emailOfUser.value,
         password: passwordOfUser.value,
+        role: role
       }),
     })
       .then((response) => {
@@ -32,7 +35,7 @@ signUpForm.addEventListener("submit", async (e) => {
         if (data.msg === "User Created") {
           location.replace("passenger-home.html");
         }
-        else if (data.msg === 'Admin Created'){
+        else if (data.msg === 'Admin Created') {
           location.replace('admin.html');
         }
       })
