@@ -15,7 +15,7 @@ fetch('https://bus-easy-api.vercel.app/user/getOwners', {
             data.forEach((elem) => {
                 let ownerDiv = `<div class="owner"><div class="name">${elem.name}</div><div class="email">${elem.email}</div></div>`;
 
-                allOwners.append(ownerDiv);
+                allOwners.innerHTML = ownerDiv;
             })
         }
         else {
