@@ -25,15 +25,17 @@ loginForm.addEventListener("submit", async (e) => {
     .then((data) => {
       alert(data.msg);
       localStorage.setItem("token", data.token);
-      if (data.msg === "User Created") {
+
+      if (data.msg === "User Logged in") {
         location.replace("passenger-home.html");
       }
-      else if (data.msg === 'Admin Created') {
+      else if (data.msg === 'Admin Logged in') {
         location.replace('admin.html');
       }
-      else if(data.msg === 'Bus Owner Created'){
+      else if(data.msg === 'Bus Owner Logged in'){
         location.replace('bus-owner.html');
       }
+
     })
     .catch((error) => {
       alert("Internal Server Error : " + error.message);
