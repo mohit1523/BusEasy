@@ -24,12 +24,15 @@ loginForm.addEventListener("submit", async (e) => {
     })
     .then((data) => {
       alert(data.msg);
-      if(data.msg === "Admin Logged in"){
-        window.location.replace("admin.html");
+      localStorage.setItem("token", data.token);
+      if (data.msg === "User Created") {
+        location.replace("passenger-home.html");
       }
-      else if (data.msg === "Logged in") {
-        localStorage.setItem("token", data.token);
-        window.location.replace("passenger-home.html");
+      else if (data.msg === 'Admin Created') {
+        location.replace('admin.html');
+      }
+      else if(data.msg === 'Bus Owner Created'){
+        location.replace('bus-owner.html');
       }
     })
     .catch((error) => {
