@@ -24,15 +24,17 @@ loginForm.addEventListener("submit", async (e) => {
     })
     .then((data) => {
       alert(data.msg);
-      localStorage.setItem("token", data.token);
-
+      
       if (data.msg === "User Logged in") {
+        localStorage.setItem("token", data.token);
         location.replace("passenger-home.html");
       }
       else if (data.msg === 'Admin Logged in') {
+        localStorage.setItem("token", data.token);
         location.replace('admin.html');
       }
       else if(data.msg === 'Bus Owner Logged in'){
+        localStorage.setItem("token", data.token);
         location.replace('bus-owner.html');
       }
 

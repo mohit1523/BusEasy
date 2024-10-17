@@ -6,7 +6,7 @@
     <link rel="icon" href="assets/title-logo.png" type="image/icon" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/bus-owner.css" />
-    <link rel="stylesheet" href="css/buses.css">
+    <link rel="stylesheet" href="css/buses.css" />
     <script
       src="https://kit.fontawesome.com/46811f7e38.js"
       crossorigin="anonymous"
@@ -15,14 +15,10 @@
 
   <body>
     <nav>
-      <a href="passenger-home.html"><img src="assets/bus-logo.png" alt="" srcset=""></a>
-      <div>
-        <a id="logout">Logout</a>
-      </div>
-    </nav>
-    <div class="heading">
+      <img src="assets/bus-logo.png" alt="" srcset="" />
       <h1>Welcome to Bus Operator Admin Page</h1>
-    </div>
+      <a id="logout">Logout</a>
+    </nav>
 
     <button class="addBus">Add a new Bus</button>
 
@@ -43,7 +39,9 @@
             id="bus-name"
             required
           />
-          <h3>Enter number of seats in the bus<br>( Should be a multiple of 5 )</h3>
+          <h3>
+            Enter number of seats in the bus<br />( Should be a multiple of 5 )
+          </h3>
           <input
             placeholder="Number of seats"
             type="number"
@@ -75,20 +73,10 @@
             </tr>
             <tr>
               <td>
-                <input
-                  type="time"
-                  name="from-time"
-                  id="from-time"
-                  required
-                />
+                <input type="time" name="from-time" id="from-time" required />
               </td>
               <td>
-                <input
-                  type="time"
-                  name="to-time"
-                  id="to-time"
-                  required
-                />
+                <input type="time" name="to-time" id="to-time" required />
               </td>
             </tr>
           </table>

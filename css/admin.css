@@ -6,9 +6,9 @@
     word-wrap: break-word;
 }
 
-.head{
+nav{
     font-family: 'Rajdhani', sans-serif;
-    background-color: rebeccapurple;
+    background-color: purple;
     padding: 20px;
     color: white;
     margin-bottom: 5vh;
@@ -17,12 +17,16 @@
     justify-content: space-between;
 }
 
-.head a{
+nav a{
     text-decoration: none;
     font-weight: 700;
     color: white;
     font-size: 1.5vw;
     cursor: pointer;
+}
+
+nav img{
+    width: 4vw;
 }
 
 table{
