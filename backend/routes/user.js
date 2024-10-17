@@ -49,27 +49,34 @@ router.post("/loginuser", async (req, res) => {
       email: req.body.email,
     });
 
-    if (existingUser) {
-      bcrypt.compare(
-        req.body.password,
-        existingUser.password,
-        function (err, result) {
-          if (result && existingUser.name === "admin") {
-            res.status(201).send({ msg: "Admin Logged in" });
-          } else if (result) {
-            const payload = {
-              userId: existingUser._id,
-            };
-            const token = jwt.sign(payload, privateKey);
-            res.status(201).send({ msg: "Logged in", token: token });
-          } else {
-            return res.status(201).send({ msg: "Wrong Password" });
-          }
+    if (!existingUser) return res.status(201).send({ msg: "Invalid details" });
+
+    bcrypt.compare(
+      req.body.password,
+      existingUser.password,
+      function (err, result) {
+        if (!result) {
+          return res.status(201).send({ msg: "Wrong Password" });
         }
-      );
-    } else {
-      return res.status(201).send({ msg: "Invalid details" });
-    }
+
+        const payload = {
+          userId: existingUser._id,
+        };
+
+        const token = jwt.sign(payload, privateKey);
+
+        if (existingUser.role === "admin") {
+          res.status(201).send({ msg: "Admin Logged in", token: token });
+        }
+        else if (existingUser.role === "busOwner") {
+          res.status(201).send({ msg: "Bus Owner Logged in", token: token });
+        }
+        else if (existingUser.role === "user") {
+          res.status(201).send({ msg: "User Logged in", token: token });
+        }
+      }
+
+    );
   } catch (error) {
     console.error(error);
   }
