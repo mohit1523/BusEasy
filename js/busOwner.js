@@ -89,6 +89,7 @@ let getTimeWithAMPM = (time) => {
 // CODE TO LOGOUT
 let logoutBtn = document.getElementById("logout");
 logoutBtn.addEventListener("click", () => {
+  localStorage.removeItem('token');
   window.location.replace("index.html");
 });
 

@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Rajdhani:wght@500&family=Raleway&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+}
+
+.head{
+    font-family: 'Rajdhani', sans-serif;
+    background-color: rebeccapurple;
+    padding: 20px;
+    color: white;
+    margin-bottom: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.head a{
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    font-size: 1.5vw;
+}
+
+table{
+    border-collapse: collapse;
+    margin: 20px;
+    border-color: black;
+}
+
+th{
+    text-align: start;
+    font-family: 'Audiowide', sans-serif;
+    font-weight: 100;
+    background-color: red;
+    font-size: 2vw;
+}
+
+th, td{
+    padding: 10px;
+}
+
+td{
+    font-family: 'Raleway', sans-serif;
+}
+
+.name{
+    width: 15vw;
+}
+
+.email{
+    width: 20vw;
+}
