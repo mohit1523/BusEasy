@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BusEasy - Project One Pager</title>
+<style>
+  :root {
+    --bg: #071316;
+    --panel: #10242a;
+    --panel-2: #153039;
+    --panel-3: #1b3b46;
+    --border: #27434b;
+    --border-strong: #39606a;
+    --text: #ebf7f6;
+    --text-2: #b9d5d3;
+    --text-3: #7fa2a1;
+    --accent: #49d7cf;
+    --accent-2: #8fe7c8;
+    --accent-3: #7bc7ff;
+    --accent-4: #7bcfd9;
+    --danger: #f18e8e;
+    --ok: #8fe7c8;
+    --shadow: 0 24px 64px rgba(3, 24, 27, 0.42);
+    --radius: 12px;
+    --font-display: Georgia, "Times New Roman", serif;
+    --font-body: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "Consolas", "Courier New", monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at top left, rgba(73, 215, 207, 0.12), transparent 40%),
+      radial-gradient(ellipse at bottom right, rgba(143, 231, 200, 0.08), transparent 42%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.55;
+    padding: 28px 22px 64px;
+  }
+
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 11px;
+    color: var(--text-3);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    line-height: 0.98;
+    margin: 0;
+    letter-spacing: -0.03em;
+  }
+
+  h1 em {
+    color: var(--accent);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .subtitle {
+    max-width: 840px;
+    color: var(--text-2);
+    margin-top: 14px;
+    font-size: 15px;
+  }
+
+  .top-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  }
+
+  .button:hover {
+    transform: translateY(-1px);
+    border-color: var(--border-strong);
+    background: rgba(255, 255, 255, 0.07);
+  }
+
+  .button.primary {
+    background: linear-gradient(135deg, rgba(73, 215, 207, 0.18), rgba(143, 231, 200, 0.18));
+    border-color: rgba(73, 215, 207, 0.3);
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .stat {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    box-shadow: var(--shadow);
+  }
+
+  .stat .label {
+    display: block;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 10px;
+    color: var(--text-3);
+    margin-bottom: 8px;
+  }
+
+  .stat .value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 26px;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat .sub {
+    color: var(--text-2);
+    font-size: 12px;
+  }
+
+  .section {
+    margin-bottom: 28px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 18px;
+    margin-bottom: 14px;
+    padding-left: 2px;
+  }
+
+  .section-num {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 24px;
+    color: var(--text-3);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+
+  .section-desc {
+    color: var(--text-3);
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .journey-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 14px;
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    box-shadow: var(--shadow);
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent);
+    opacity: 0.75;
+  }
+
+  .card[data-tone="accent"]::before { background: var(--accent); }
+  .card[data-tone="green"]::before { background: var(--accent-2); }
+  .card[data-tone="gold"]::before { background: var(--accent-3); }
+  .card[data-tone="purple"]::before { background: var(--accent-4); }
+  .card[data-tone="danger"]::before { background: var(--danger); }
+
+  .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+
+  .card-title {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-3);
+    background: var(--panel-3);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 9px;
+    white-space: nowrap;
+  }
+
+  .card p {
+    color: var(--text-2);
+    margin-bottom: 0;
+  }
+
+  .chip-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  .chip {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--text-2);
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+  }
+
+  .chip strong { color: var(--text); font-weight: 600; }
+
+  .coach-map-card {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .coach-map-shell {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .coach-map-labels {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-3);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+
+  .coach-map {
+    display: grid;
+    gap: 10px;
+  }
+
+  .coach-row {
+    display: grid;
+    grid-template-columns: 1fr 18px 1fr;
+    gap: 10px;
+  }
+
+  .seat-mini {
+    min-height: 42px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+
+  .seat-mini span {
+    color: var(--text-3);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .seat-mini.open {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .seat-mini.sold {
+    background: rgba(239, 125, 125, 0.12);
+    border-color: rgba(239, 125, 125, 0.24);
+  }
+
+  .seat-mini.hold {
+    background: rgba(242, 186, 127, 0.14);
+    border-color: rgba(242, 186, 127, 0.28);
+  }
+
+  .seat-mini.selected {
+    background: rgba(73, 215, 207, 0.16);
+    border-color: rgba(73, 215, 207, 0.32);
+  }
+
+  .journey-list {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .journey-list li {
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-2);
+  }
+
+  .journey-list strong {
+    color: var(--text);
+  }
+
+  .flow {
+    display: grid;
+    gap: 14px;
+  }
+
+  .flow-step {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 160px 1fr;
+    align-items: start;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .flow-step .step-name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    color: var(--text);
+  }
+
+  .flow-step .step-copy {
+    color: var(--text-2);
+  }
+
+  .flow-step ul {
+    margin: 10px 0 0 18px;
+    color: var(--text-2);
+  }
+
+  .flow-step li { margin-bottom: 6px; }
+
+  .matrix {
+    display: grid;
+    gap: 12px;
+  }
+
+  .role {
+    padding: 18px 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .role h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+  }
+
+  .role p {
+    margin: 0;
+    color: var(--text-2);
+  }
+
+  .role ul {
+    margin: 10px 0 0 18px;
+    color: var(--text-2);
+  }
+
+  .role li { margin-bottom: 6px; }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .stack-item {
+    padding: 16px 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  .stack-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+  }
+
+  .stack-item span {
+    color: var(--text-2);
+    font-size: 13px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .gallery-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.02);
+    box-shadow: var(--shadow);
+  }
+
+  .gallery-top {
+    padding: 18px 18px 12px;
+    background:
+      linear-gradient(135deg, rgba(73, 215, 207, 0.12), rgba(143, 231, 200, 0.08)),
+      rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .gallery-top strong {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+
+  .gallery-top span {
+    color: var(--text-2);
+    font-size: 13px;
+  }
+
+  .gallery-body {
+    padding: 16px 18px 18px;
+    color: var(--text-2);
+    min-height: 160px;
+  }
+
+  .gallery-body ul {
+    margin: 10px 0 0 18px;
+  }
+
+  .gallery-body li {
+    margin-bottom: 6px;
+  }
+
+  .footer {
+    margin-top: 34px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    gap: 16px;
+  }
+
+  .footer-note {
+    color: var(--text-3);
+    font-size: 13px;
+  }
+
+  .footer-cta {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 18px 20px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: linear-gradient(135deg, rgba(73, 215, 207, 0.1), rgba(143, 231, 200, 0.08));
+  }
+
+  .footer-cta strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .footer-cta span {
+    color: var(--text-2);
+  }
+
+  .link-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 9, 13, 0.74);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    z-index: 40;
+  }
+
+  .overlay.open { display: flex; }
+
+  .modal {
+    width: min(760px, 100%);
+    max-height: 88vh;
+    overflow: auto;
+    border-radius: 18px;
+    border: 1px solid var(--border-strong);
+    background: linear-gradient(180deg, rgba(18, 24, 31, 0.98), rgba(16, 20, 25, 0.98));
+    box-shadow: var(--shadow);
+    padding: 22px 22px 24px;
+  }
+
+  .modal-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+
+  .modal-head h3 {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .modal-head p {
+    color: var(--text-2);
+    margin: 0;
+  }
+
+  .close-btn {
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    border-radius: 999px;
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+  }
+
+  .modal-section {
+    padding: 16px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .modal-section:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .modal-section h4 {
+    margin: 0 0 8px;
+    font-size: 15px;
+  }
+
+  .modal-section p,
+  .modal-section li {
+    color: var(--text-2);
+  }
+
+  .modal-section ul {
+    margin: 10px 0 0 18px;
+  }
+
+  @media (max-width: 1080px) {
+    .stats-grid,
+    .stack-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery,
+    .grid-3 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 820px) {
+    body { padding: 18px 14px 48px; }
+
+    .topbar,
+    .section-header,
+    .flow-step,
+    .footer-cta {
+      grid-template-columns: 1fr;
+      display: grid;
+      align-items: start;
+    }
+
+    .top-actions,
+    .link-row {
+      width: 100%;
+    }
+
+    .stats-grid,
+    .grid-2,
+    .grid-3,
+    .gallery,
+    .stack-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="overlay" id="overlay" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-head">
+      <div>
+        <div class="eyebrow" id="modal-eyebrow">BusEasy</div>
+        <h3 id="modal-title">Title</h3>
+        <p id="modal-subtitle">Subtitle</p>
+      </div>
+      <button class="close-btn" id="closeModal" aria-label="Close details">×</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<div class="container">
+  <header class="topbar">
+    <div>
+      <div class="eyebrow">BusEasy · One Pager · 2026</div>
+      <h1>Smarter <em>bus booking</em> for passengers, operators, and admins.</h1>
+      <p class="subtitle">
+        BusEasy is a role-based bus reservation platform that helps passengers find dated trips, lets operators publish
+        and manage departures, and gives admins a clear approval and monitoring console.
+      </p>
+    </div>
+    <div class="top-actions">
+      <a class="button primary" href="#roles">View roles</a>
+      <a class="button" href="#features">Explore features</a>
+      <a class="button" href="#trip-lifecycle">Trip lifecycle</a>
+      <a class="button" href="#tech">Tech stack</a>
+    </div>
+  </header>
+
+  <section class="stats-grid" aria-label="Project highlights">
+    <div class="stat">
+      <span class="label">Core roles</span>
+      <span class="value">3</span>
+      <span class="sub">Passenger, Operator, Admin</span>
+    </div>
+    <div class="stat">
+      <span class="label">Seat hold</span>
+      <span class="value">5 min</span>
+      <span class="sub">Real hold state, then release</span>
+    </div>
+    <div class="stat">
+      <span class="label">Operator flow</span>
+      <span class="value">Guided</span>
+      <span class="sub">Setup, publish, manifests</span>
+    </div>
+    <div class="stat">
+      <span class="label">Admin flow</span>
+      <span class="value">Controlled</span>
+      <span class="sub">Approvals and oversight</span>
+    </div>
+    <div class="stat">
+      <span class="label">Architecture</span>
+      <span class="value">MERN</span>
+      <span class="sub">React, Express, MongoDB, JWT</span>
+    </div>
+  </section>
+
+  <section class="section" id="overview">
+    <div class="section-header">
+      <div>
+        <span class="section-num">01</span>
+        <span class="section-title">What BusEasy solves</span>
+      </div>
+      <span class="section-desc">A clearer trip-based flow for bus operations</span>
+    </div>
+    <div class="grid-2">
+      <article class="card" data-tone="accent">
+        <div class="card-head">
+          <div class="card-title">From static routes to real departures</div>
+          <span class="badge">Passenger-first</span>
+        </div>
+        <p>
+          BusEasy replaces static bus cards with dated trips, real availability, and a seat picker so travelers can
+          search by origin, destination, and travel date before booking.
+        </p>
+        <div class="chip-row">
+          <span class="chip"><strong>Search</strong> by route + date</span>
+          <span class="chip"><strong>Pick</strong> live seats</span>
+          <span class="chip"><strong>Manage</strong> bookings later</span>
+        </div>
+      </article>
+      <article class="card" data-tone="green">
+        <div class="card-head">
+          <div class="card-title">Built for the supply side too</div>
+          <span class="badge">Operator-ready</span>
+        </div>
+        <p>
+          Operators can create vehicles, route templates, and trips, then publish departures with readiness checks and
+          manifest views instead of managing everything in disconnected pages.
+        </p>
+        <div class="chip-row">
+          <span class="chip"><strong>Vehicles</strong> and seat counts</span>
+          <span class="chip"><strong>Routes</strong> and defaults</span>
+          <span class="chip"><strong>Trips</strong> and manifests</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="seat-journey">
+    <div class="section-header">
+      <div>
+        <span class="section-num">03</span>
+        <span class="section-title">Seat-selection journey</span>
+      </div>
+      <span class="section-desc">The part users notice first</span>
+    </div>
+    <div class="journey-grid">
+      <article class="card" data-tone="accent">
+        <div class="card-head">
+          <div class="card-title">Coach-map first, not a flat grid</div>
+          <span class="badge">Full-screen map</span>
+        </div>
+        <p>
+          The redesigned seat selector should feel like a real coach layout with a visible front, rear, aisle spacing,
+          and larger seat targets so users understand the map at a glance.
+        </p>
+        <div class="coach-map-card">
+          <div class="coach-map-labels">
+            <span>Front</span>
+            <span>Aisle</span>
+            <span>Rear</span>
+          </div>
+          <div class="coach-map-shell">
+            <div class="coach-row">
+              <div class="seat-mini sold"><strong>1</strong><span>sold</span></div>
+              <div></div>
+              <div class="seat-mini open"><strong>2</strong><span>open</span></div>
+            </div>
+            <div class="coach-row">
+              <div class="seat-mini hold"><strong>3</strong><span>on hold</span></div>
+              <div></div>
+              <div class="seat-mini selected"><strong>4</strong><span>selected</span></div>
+            </div>
+            <div class="coach-row">
+              <div class="seat-mini open"><strong>5</strong><span>open</span></div>
+              <div></div>
+              <div class="seat-mini open"><strong>6</strong><span>open</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="chip-row">
+          <span class="chip"><strong>open</strong> seats are tappable</span>
+          <span class="chip"><strong>sold</strong> seats stay locked</span>
+          <span class="chip"><strong>on hold</strong> seats expire in 5 minutes</span>
+        </div>
+      </article>
+      <article class="card" data-tone="green">
+        <div class="card-head">
+          <div class="card-title">Guided booking, with less hesitation</div>
+          <span class="badge">Sticky summary</span>
+        </div>
+        <p>
+          The right side should stay fixed with the booking summary, selected seats, fare total, and confirm button so
+          users never lose their place while choosing multiple seats.
+        </p>
+        <ul class="journey-list">
+          <li><strong>What users see first:</strong> trip snapshot, seat legend, and map state.</li>
+          <li><strong>What stays sticky:</strong> selected seats, timer, total fare, and confirm action.</li>
+          <li><strong>How groups work:</strong> easier adjacent seat selection and quick removal chips.</li>
+          <li><strong>Why it feels better:</strong> the flow becomes seats first, then names, then confirmation.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="trip-lifecycle">
+    <div class="section-header">
+      <div>
+        <span class="section-num">04</span>
+        <span class="section-title">What happens after departure</span>
+      </div>
+      <span class="section-desc">Trips close automatically, then remain visible as history</span>
+    </div>
+    <div class="grid-2">
+      <article class="card" data-tone="gold">
+        <div class="card-head">
+          <div class="card-title">Lifecycle path</div>
+          <span class="badge">draft → published → completed</span>
+        </div>
+        <p>
+          Once a trip’s departure time passes, the backend marks it completed on a scheduled job so it no longer
+          behaves like a live departure. Seat holds clear automatically and booking actions stop.
+        </p>
+        <div class="chip-row">
+          <span class="chip"><strong>Draft</strong> stays editable</span>
+          <span class="chip"><strong>Published</strong> is bookable</span>
+          <span class="chip"><strong>Completed</strong> becomes history</span>
+        </div>
+      </article>
+      <article class="card" data-tone="purple">
+        <div class="card-head">
+          <div class="card-title">Role matrix</div>
+          <span class="badge">Passenger / Operator / Admin</span>
+        </div>
+        <div class="matrix">
+          <div class="role">
+            <h3>Passenger</h3>
+            <p>Past trips stay in booking history and receipts, but seat selection and cancellations stop once the trip has passed.</p>
+          </div>
+          <div class="role">
+            <h3>Operator</h3>
+            <p>Completed trips are read-only for core data, but operators can still inspect manifests and update status before closure when needed.</p>
+          </div>
+          <div class="role">
+            <h3>Admin</h3>
+            <p>Admins keep full oversight over historical trips and can apply manual overrides for exceptional cases.</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="roles">
+    <div class="section-header">
+      <div>
+        <span class="section-num">06</span>
+        <span class="section-title">Role-by-role use cases</span>
+      </div>
+      <span class="section-desc">Who uses it and what they do</span>
+    </div>
+    <div class="matrix">
+      <article class="role">
+        <h3>Passenger</h3>
+        <p>Find a trip, inspect fare and availability, select seats, book, and manage that booking later.</p>
+        <ul>
+          <li>Search by origin, destination, and date.</li>
+          <li>Choose one or more seats with passenger names.</li>
+          <li>Review live trip details before confirming.</li>
+          <li>See booking references and cancel confirmed bookings.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Operator</h3>
+        <p>Create the supply that passengers book against, then operate trips with clearer controls and visibility.</p>
+        <ul>
+          <li>Add vehicles and route templates.</li>
+          <li>Create draft or published trips from defaults.</li>
+          <li>Open manifests, see occupancy, and update trip status.</li>
+          <li>Use alerts for drafts, departing-soon trips, and low occupancy.</li>
+        </ul>
+      </article>
+      <article class="role">
+        <h3>Admin</h3>
+        <p>Approve operators and keep an eye on platform health without bouncing between multiple views.</p>
+        <ul>
+          <li>Review pending operator accounts.</li>
+          <li>Approve or reject access.</li>
+          <li>Monitor active, inactive, and empty-trips context.</li>
+          <li>Track bookings and supply-side health in one console.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="section-header">
+      <div>
+        <span class="section-num">05</span>
+        <span class="section-title">Feature set</span>
+      </div>
+      <span class="section-desc">High-value screens and workflow helpers</span>
+    </div>
+    <div class="gallery">
+      <button class="gallery-card card" data-tone="accent" data-modal="passenger">
+        <div class="gallery-top">
+          <strong>Passenger seat journey</strong>
+          <span>Coach map, hold timer, and booking confirmation</span>
+        </div>
+        <div class="gallery-body">
+          <ul>
+            <li>Trip search by route and date.</li>
+            <li>Coach-map-first seat selection.</li>
+            <li>Open, sold, on-hold, and selected states.</li>
+            <li>5-minute hold and clearer confirm flow.</li>
+          </ul>
+        </div>
+      </button>
+      <button class="gallery-card card" data-tone="green" data-modal="operator">
+        <div class="gallery-top">
+          <strong>Operator workspace</strong>
+          <span>Setup, publish, and run trips</span>
+        </div>
+        <div class="gallery-body">
+          <ul>
+            <li>Guided trip setup with defaults.</li>
+            <li>Saved filters and row state.</li>
+            <li>Readiness checks and operational alerts.</li>
+            <li>Manifest review with occupancy cues.</li>
+          </ul>
+        </div>
+      </button>
+      <button class="gallery-card card" data-tone="purple" data-modal="admin">
+        <div class="gallery-top">
+          <strong>Admin oversight</strong>
+          <span>Approval and platform monitoring</span>
+        </div>
+        <div class="gallery-body">
+          <ul>
+            <li>Approve or reject operator accounts.</li>
+            <li>View platform health exceptions.</li>
+            <li>See trips, bookings, routes, vehicles.</li>
+            <li>Keep supply growth under control.</li>
+          </ul>
+        </div>
+      </button>
+      <button class="gallery-card card" data-tone="gold" data-modal="shared">
+        <div class="gallery-top">
+          <strong>Shared workspaces</strong>
+          <span>Reusable tables and detail panes</span>
+        </div>
+        <div class="gallery-body">
+          <ul>
+            <li>Sort and filter records across entities.</li>
+            <li>Persist workspace state locally.</li>
+            <li>Open row-level details without leaving the page.</li>
+            <li>Use one pattern for trips, bookings, routes, and vehicles.</li>
+          </ul>
+        </div>
+      </button>
+      <button class="gallery-card card" data-tone="accent" data-modal="backend">
+        <div class="gallery-top">
+          <strong>Backend safeguards</strong>
+          <span>Validation and access control</span>
+        </div>
+        <div class="gallery-body">
+          <ul>
+            <li>JWT-based login and role routing.</li>
+            <li>Passenger booking checks for seat conflicts.</li>
+            <li>Operator approval gating before operations.</li>
+            <li>Input validation on setup and bookings.</li>
+          </ul>
+        </div>
+      </button>
+      <button class="gallery-card card" data-tone="danger" data-modal="future">
+        <div class="gallery-top">
+          <strong>Future phase ideas</strong>
+          <span>Next improvements you can add later</span>
+        </div>
+        <div class="gallery-body">
+          <ul>
+            <li>Seat locking and short booking holds.</li>
+            <li>Notifications for approvals and bookings.</li>
+            <li>Exports for manifests and bookings.</li>
+            <li>Waitlist, promo rules, or fare discounts.</li>
+          </ul>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <section class="section" id="flow">
+    <div class="section-header">
+      <div>
+        <span class="section-num">07</span>
+        <span class="section-title">How the flow works</span>
+      </div>
+      <span class="section-desc">A simple end-to-end journey</span>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <div class="step-name">1. Enter the platform</div>
+        <div class="step-copy">
+          The landing page directs users to the right role and login path, so passengers, operators, and admins land
+          in different experiences immediately.
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-name">2. Create supply</div>
+        <div class="step-copy">
+          Operators create vehicles and routes first, then use those defaults to draft or publish trips with fares,
+          dates, and times.
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-name">3. Book live seats</div>
+        <div class="step-copy">
+          Passengers open the coach map, pick seats with clear open/sold/on-hold states, enter passenger names, and
+          confirm before the 5-minute hold expires.
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-name">4. Monitor and approve</div>
+        <div class="step-copy">
+          Admins review pending operators, monitor platform health, and keep the supply side trustworthy while
+          operators manage active trips.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tech">
+    <div class="section-header">
+      <div>
+        <span class="section-num">08</span>
+        <span class="section-title">Tech stack</span>
+      </div>
+      <span class="section-desc">Simple architecture, role-based control</span>
+    </div>
+    <div class="stack-grid">
+      <div class="stack-item">
+        <strong>Frontend</strong>
+        <span>React + Vite single-page app with role-based routes and reusable workspace components.</span>
+      </div>
+      <div class="stack-item">
+        <strong>Backend</strong>
+        <span>Express API with role guards, booking logic, operator approval, and trip management endpoints.</span>
+      </div>
+      <div class="stack-item">
+        <strong>Database</strong>
+        <span>MongoDB models for users, vehicles, route templates, trips, and bookings.</span>
+      </div>
+      <div class="stack-item">
+        <strong>Security</strong>
+        <span>JWT auth, approval gating, and server-side validation for seats, roles, and setup inputs.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cta">
+    <div class="section-header">
+      <div>
+        <span class="section-num">09</span>
+        <span class="section-title">Why it matters</span>
+      </div>
+      <span class="section-desc">A better workflow for every role</span>
+    </div>
+    <div class="grid-2">
+      <article class="card" data-tone="accent">
+        <div class="card-head">
+          <div class="card-title">Clearer user journeys</div>
+          <span class="badge">Less friction</span>
+        </div>
+        <p>
+          The app removes dead ends by guiding users to the right next step, whether that means booking a trip,
+          finishing operator setup, or approving a new supply partner.
+        </p>
+      </article>
+      <article class="card" data-tone="green">
+        <div class="card-head">
+          <div class="card-title">Better operational control</div>
+          <span class="badge">Ready to scale</span>
+        </div>
+        <p>
+          Operators and admins get visibility into status, occupancy, approvals, and setup readiness so the platform
+          is easier to run as the number of trips grows.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-cta">
+      <div>
+        <strong>BusEasy is built to make bus travel calmer for passengers and easier to run for operators.</strong>
+        <span>Use this one-pager for demos, submissions, or quick project sharing.</span>
+      </div>
+      <div class="link-row">
+        <a class="button primary" href="#overview">Back to top</a>
+        <a class="button" href="#features">See features</a>
+      </div>
+    </div>
+    <div class="footer-note">
+      Standalone one-pager for the BusEasy project. Content covers the current trip-based booking flow, role-based
+      workspaces, past-trip handling, admin oversight, shared UI patterns, and phase-2 ideas.
+    </div>
+  </footer>
+</div>
+
+<script>
+  const modalData = {
+    passenger: {
+      eyebrow: "Feature 1 · Passenger flow",
+      title: "Passenger booking experience",
+      subtitle: "Search trips, pick seats, and manage the booking lifecycle",
+      body: [
+        {
+          title: "Primary use case",
+          text: "Passengers search by origin, destination, and travel date, then open a full-screen coach map that makes open, sold, on-hold, and selected seats easy to understand.",
+        },
+        {
+          title: "What the screen includes",
+          list: [
+            "Trip cards with route, fare, vehicle, and time information",
+            "Recent searches for quick repeat booking",
+            "Larger seat targets with clearer labels and spacing",
+            "Booking confirmation, booking history, and cancellation support before departure",
+          ],
+        },
+      ],
+    },
+    operator: {
+      eyebrow: "Feature 2 · Operator flow",
+      title: "Operator operations workspace",
+      subtitle: "Create supply, publish departures, and inspect manifests",
+      body: [
+        {
+          title: "Primary use case",
+          text: "Operators manage vehicles, routes, and trips in a guided setup flow, then monitor live trips from a compact operations dashboard.",
+        },
+        {
+          title: "What the screen includes",
+          list: [
+            "Trip readiness checks before publish",
+            "Saved filters for trips, vehicles, routes, and bookings",
+            "Operational alerts for drafts, low occupancy, and departing-soon trips",
+            "Historical trips stay visible after auto-complete for manifest review",
+            "Manifest view with passenger names, seat numbers, and booking references",
+          ],
+        },
+      ],
+    },
+    admin: {
+      eyebrow: "Feature 3 · Admin flow",
+      title: "Admin approvals and oversight",
+      subtitle: "Approve operators and keep the supply side healthy",
+      body: [
+        {
+          title: "Primary use case",
+          text: "Admins review pending operator accounts, approve or reject them, and watch overall platform activity from one console.",
+        },
+        {
+          title: "What the screen includes",
+          list: [
+            "Pending operator approval cards with context",
+            "Platform health summary for inactive items and empty trips",
+            "Operator roster with approval status",
+            "Trips, bookings, routes, and vehicles views for audit, visibility, and manual override",
+          ],
+        },
+      ],
+    },
+    shared: {
+      eyebrow: "System · Shared workspaces",
+      title: "Reusable workspace pattern",
+      subtitle: "One table/detail pattern across admin and operator pages",
+      body: [
+        {
+          title: "Why it helps",
+          text: "Trips, bookings, routes, and vehicles all use the same reusable workspace pattern so the app feels consistent, remains easy to scan, and makes completed-trip history easy to find.",
+        },
+        {
+          title: "Key behavior",
+          list: [
+            "Sort records from the column header",
+            "Filter records by select, number range, and date range",
+            "Persist workspace state in local storage",
+            "Open a detail pane without leaving the page",
+          ],
+        },
+      ],
+    },
+    backend: {
+      eyebrow: "System · Backend safeguards",
+      title: "API and validation layers",
+      subtitle: "Keep the experience consistent and safe",
+      body: [
+        {
+          title: "How it works",
+          text: "The backend uses role-based auth, approval gates, seat conflict checks, trip-completion scheduling, and input validation so the UI cannot accidentally create invalid records.",
+        },
+        {
+          title: "Examples",
+          list: [
+            "Operators must be approved before using operation pages",
+            "Passenger bookings reject duplicate or invalid seats",
+            "Trip and route setup require valid inputs",
+            "Login, signup, and admin approval follow JWT-based access control",
+            "Trips auto-close to completed status once departure time passes",
+          ],
+        },
+      ],
+    },
+    future: {
+      eyebrow: "Roadmap · Future ideas",
+      title: "Possible next features",
+      subtitle: "Good candidates for phase 2",
+      body: [
+        {
+          title: "Ideas to consider next",
+          list: [
+            "Seat-hold notifications and expiry warnings",
+            "Notifications for approvals, bookings, and cancellations",
+            "Manifest/export downloads for operators and admins",
+            "Waitlist, discounts, promo rules, or fare rules",
+            "Past-trip dashboards with auto-close history and admin overrides",
+          ],
+        },
+      ],
+    },
+  };
+
+  const overlay = document.getElementById("overlay");
+  const modalBody = document.getElementById("modal-body");
+  const modalTitle = document.getElementById("modal-title");
+  const modalSubtitle = document.getElementById("modal-subtitle");
+  const modalEyebrow = document.getElementById("modal-eyebrow");
+  const closeBtn = document.getElementById("closeModal");
+
+  function openModal(key) {
+    const data = modalData[key];
+    if (!data) return;
+
+    modalEyebrow.textContent = data.eyebrow;
+    modalTitle.textContent = data.title;
+    modalSubtitle.textContent = data.subtitle;
+    modalBody.innerHTML = data.body
+      .map((section) => {
+        const list = section.list
+          ? `<ul>${section.list.map((item) => `<li>${item}</li>`).join("")}</ul>`
+          : "";
+        const text = section.text ? `<p>${section.text}</p>` : "";
+        return `<div class="modal-section"><h4>${section.title}</h4>${text}${list}</div>`;
+      })
+      .join("");
+
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll("[data-modal]").forEach((card) => {
+    card.addEventListener("click", () => openModal(card.dataset.modal));
+  });
+
+  closeBtn.addEventListener("click", closeModal);
+  overlay.addEventListener("click", (event) => {
+    if (event.target === overlay) closeModal();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeModal();
+  });
+</script>
+</body>
+</html>

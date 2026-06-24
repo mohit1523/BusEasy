@@ -1,15 +1,16 @@
-const mongoose = require('mongoose');
-const URL = "mongodb+srv://mohit1502:pCAWZsiL567D97Et@mak.4zerk6q.mongodb.net/busdb?retryWrites=true&w=majority&appName=Mak";
+const mongoose = require("mongoose");
+
+const DB_URL =
+  process.env.MONGO_URL ||
+  "mongodb://127.0.0.1:27017/buseasy";
 
 const DBConnect = async () => {
-    try {
-        await mongoose.connect(URL).then(() => {
-            console.log('Database connected');
-        })
-        
-    } catch (error) {
-        console.log(error);
-    }
-}
+  try {
+    await mongoose.connect(DB_URL);
+    console.log("Database connected");
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 module.exports = DBConnect;
